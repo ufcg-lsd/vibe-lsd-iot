@@ -35,7 +35,11 @@ byte calcula_rotate(int atual, int objetivo) {
 }
 
 void handleRoot() {
-  server.send(200, "text/plain", "Vai pegar nunca!");
+  String message = "Vibe LSD\n\n";
+  message += "Connected to ";
+  message += ssid;
+  
+  server.send(200, "text/plain", message);
   digitalWrite(led, 1);
   delay(1000);
   digitalWrite(led, 0);
@@ -112,7 +116,7 @@ void setup(void) {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-  Serial.print("mac: ");
+  Serial.print("MAC: ");
   Serial.println(WiFi.macAddress());
 
   if (MDNS.begin("esp8266")) {
