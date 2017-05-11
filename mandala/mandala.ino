@@ -4,8 +4,8 @@
 #include <ESP8266mDNS.h>
 #include <CustomStepper.h>
 
-const char* ssid = "lsdmovel";
-const char* password = "77188b9f";
+const char* ssid = "LSD";
+const char* password = "1641!@#lsdmember";
 byte mac[6];
 const int led = 2;
 
@@ -28,7 +28,7 @@ int calcula_pulo(int atual, int objetivo) {
 byte calcula_rotate(int atual, int objetivo) {
   if(atual > objetivo){
     return CCW;
-  } else if (atual < objetivo){
+  } else if (atual < objetivo) {
     return CW;
   }
   return CW;
@@ -38,6 +38,8 @@ void handleRoot() {
   String message = "Vibe LSD\n\n";
   message += "Connected to ";
   message += ssid;
+  message += "Current step: ";
+  message += nivel;
   
   server.send(200, "text/plain", message);
   digitalWrite(led, 1);
