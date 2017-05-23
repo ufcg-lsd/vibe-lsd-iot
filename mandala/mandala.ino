@@ -35,11 +35,11 @@ byte calcula_rotate(int atual, int objetivo) {
 }
 
 void handleRoot() {
-  String message = "Vibe LSD\n\n";
-  message += "Connected to ";
+  String message = "Vibe LSD | Connected to ";
   message += ssid;
-  message += "Current step: ";
+  message += " | Current step: ";
   message += nivel;
+  message += "\n";
   
   server.send(200, "text/plain", message);
   digitalWrite(led, 1);
